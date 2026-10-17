@@ -1,0 +1,238 @@
+\documentclass{habshe-tufte}
+
+\usepackage{lipsum}
+\usepackage{amsmath,amssymb,amsfonts}
+
+\begin{document} % implied full-width layout
+
+\subject{Subject Huge}
+
+\heading{Heading huge}
+
+\subheading{Sub-Heading LARGE}
+
+\subsubheading{Sub-Sub-Heading Large}
+
+\subsubsubheading{Sub-Sub-Sub-Heading large}
+
+Regular paragraphs are in normal size, indented with no vertical space between them.
+
+\lipsum[4-6]
+
+\begin{topic}[Topic] % run-in: first sentence follows on the SAME line (no blank line)
+  Topic environments start with an unindented line where the topic name starts the line and the first paragraph continues after it inline. Subsequent paragraphs indent with no vertical space.
+
+  \lipsum[7-8]
+
+  \begin{subtopic}[Sub-Topic]
+    Subtopic environments are a regular indented paragraph same as a regular paragraph in topic, but start with a subtopic name. The first paragraph continues after the subtopic name inline. Subsequent paragraphs are indented.
+
+    \lipsum[9-10]
+  \end{subtopic}
+
+  \lipsum[11]
+\end{topic}
+
+Sometimes math is inline:
+
+\begin{itemize}
+\item The scalar value $\alpha \in \mathbb{R}$ satisfies the condition $\alpha^2 > 0$ for all non-zero inputs.
+\item Let $f(x) = e^{-x} \sin(x)$ be a continuous mapping on the open interval $(0, 1)$.
+\item Given vectors $\mathbf{u} = (1, 2, 3)$ and $\mathbf{v} = (4, 5, 6)$, their dot product is $\mathbf{u} \cdot \mathbf{v} = 32$.
+\item The function $g(z) = \frac{1}{2\pi i} \oint_{\gamma} \frac{g(w)}{w - z} \, dw$ defines the Cauchy integral formula.
+\item Lorem ipsum dolor sit amet, ubi $\sum_{n=1}^{\infty} a_n$ converges absolutely.
+\end{itemize}
+
+Other times it is not:
+
+$$
+ax^2 + bx = -c
+$$
+
+Divide both sides by $a$:
+
+$$
+x^2 + \frac{b}{a}x = -\frac{c}{a}
+$$
+
+Add $\left(\frac{b}{2a}\right)^2$ to both sides to complete the square:
+
+$$
+x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2} - \frac{c}{a}
+$$
+
+$$
+\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}
+$$
+
+Taking the square root of both sides gives:
+
+$$
+x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}
+$$
+
+Solving for $x$, we arrive at the quadratic formula:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+Proof: Sum of Consecutive Integers
+\textbf{Theorem:} For any positive integer $n$, the sum of the first $n$ natural integers is given by:
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+\begin{enumerate}
+\item \textbf{Base Case:} For $n = 1$, the left-hand side is $1$, and the right-hand side is:
+  $$
+  \frac{1(1+1)}{2} = \frac{2}{2} = 1
+  $$
+  Thus, the base case holds.
+
+\item \textbf{Inductive Hypothesis:} Assume the formula holds for some integer $k \ge 1$:
+  $$
+  \sum_{i=1}^{k} i = \frac{k(k+1)}{2}
+  $$
+
+\item \textbf{Inductive Step:} We must show that it holds for $n = k + 1$:
+  $$
+  \sum_{i=1}^{k+1} i = \left( \sum_{i=1}^{k} i \right) + (k+1)
+  $$
+
+  Substitute the inductive hypothesis into the equation:
+  $$
+  \sum_{i=1}^{k+1} i = \frac{k(k+1)}{2} + (k+1)
+  $$
+
+  Factor out $(k+1)$:
+  $$
+  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k}{2} + 1 \right)
+  $$
+
+  Combine terms inside the parenthesis:
+  $$
+  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k + 2}{2} \right) = \frac{(k+1)(k+2)}{2}
+  $$
+
+  This matches the formula for $n = k + 1$. Therefore, by mathematical induction, the statement is true for all $n \in \mathbb{N}$. $\blacksquare$
+\end{enumerate}
+
+\tufte
+
+\subject{Subject Huge}
+
+\heading{Heading huge}
+
+\subheading{Sub-Heading LARGE}
+
+\subsubheading{Sub-Sub-Heading Large}
+
+\subsubsubheading{Sub-Sub-Sub-Heading large}
+
+Regular paragraphs are in normal size, indented with no vertical space between them.
+
+\lipsum[4-6]
+
+\begin{topic}[Topic]
+  Topic environments start with an unindented line where the topic name starts the line and the first paragraph continues after it inline. Subsequent paragraphs indent with no vertical space.
+
+  \lipsum[7-8]
+
+  \begin{subtopic}[Sub-Topic]
+    Subtopic environments are a regular indented paragraph same as a regular paragraph in topic, but start with a subtopic name. The first paragraph continues after the subtopic name inline. Subsequent paragraphs are indented.
+
+    \lipsum[9-10]
+  \end{subtopic}
+
+  \lipsum[11]
+\end{topic}
+
+Sometimes math is inline:
+
+\begin{itemize}
+\item The scalar value $\alpha \in \mathbb{R}$ satisfies the condition $\alpha^2 > 0$ for all non-zero inputs.
+\item Let $f(x) = e^{-x} \sin(x)$ be a continuous mapping on the open interval $(0, 1)$.
+\item Given vectors $\mathbf{u} = (1, 2, 3)$ and $\mathbf{v} = (4, 5, 6)$, their dot product is $\mathbf{u} \cdot \mathbf{v} = 32$.
+\item The function $g(z) = \frac{1}{2\pi i} \oint_{\gamma} \frac{g(w)}{w - z} \, dw$ defines the Cauchy integral formula.
+\item Lorem ipsum dolor sit amet, ubi $\sum_{n=1}^{\infty} a_n$ converges absolutely.
+\end{itemize}
+
+Other times it is not:
+
+$$
+ax^2 + bx = -c
+$$
+
+Divide both sides by $a$:
+
+$$
+x^2 + \frac{b}{a}x = -\frac{c}{a}
+$$
+
+Add $\left(\frac{b}{2a}\right)^2$ to both sides to complete the square:
+
+$$
+x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2} - \frac{c}{a}
+$$
+
+$$
+\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}
+$$
+
+Taking the square root of both sides gives:
+
+$$
+x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}
+$$
+
+Solving for $x$, we arrive at the quadratic formula:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+Proof: Sum of Consecutive Integers
+\textbf{Theorem:} For any positive integer $n$, the sum of the first $n$ natural integers is given by:
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
+
+\begin{enumerate}
+\item \textbf{Base Case:} For $n = 1$, the left-hand side is $1$, and the right-hand side is:
+  $$
+  \frac{1(1+1)}{2} = \frac{2}{2} = 1
+  $$
+  Thus, the base case holds.
+
+\item \textbf{Inductive Hypothesis:} Assume the formula holds for some integer $k \ge 1$:
+  $$
+  \sum_{i=1}^{k} i = \frac{k(k+1)}{2}
+  $$
+
+\item \textbf{Inductive Step:} We must show that it holds for $n = k + 1$:
+  $$
+  \sum_{i=1}^{k+1} i = \left( \sum_{i=1}^{k} i \right) + (k+1)
+  $$
+
+  Substitute the inductive hypothesis into the equation:
+  $$
+  \sum_{i=1}^{k+1} i = \frac{k(k+1)}{2} + (k+1)
+  $$
+
+  Factor out $(k+1)$:
+  $$
+  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k}{2} + 1 \right)
+  $$
+
+  Combine terms inside the parenthesis:
+  $$
+  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k + 2}{2} \right) = \frac{(k+1)(k+2)}{2}
+  $$
+
+  This matches the formula for $n = k + 1$. Therefore, by mathematical induction, the statement is true for all $n \in \mathbb{N}$. $\blacksquare$
+\end{enumerate}
+
+\end{document}
