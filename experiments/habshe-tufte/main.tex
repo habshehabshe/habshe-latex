@@ -3,236 +3,181 @@
 \usepackage{lipsum}
 \usepackage{amsmath,amssymb,amsfonts}
 
-\begin{document} % implied full-width layout
+\begin{document} % Implied full-width layout at start
 
-\subject{Subject Huge}
+% ==================================================================
+% PART 1: PURE FULL-WIDTH LAYOUT
+% ==================================================================
+\subject{Part I: Full-Width Stream}
 
-\heading{Heading huge}
+\heading{Heading Huge (Full-Width)}
 
 \subheading{Sub-Heading LARGE}
 
 \subsubheading{Sub-Sub-Heading Large}
 
-\subsubsubheading{Sub-Sub-Sub-Heading large}
+\subsubsubheading{Sub-Sub-Sub-Heading Large}
 
-Regular paragraphs are in normal size, indented with no vertical space between them.
+Regular paragraphs are in normal size, indented with no vertical space between them. In this stream, the text spans the entire text area from the left blank margin to the right blank margin.
 
-\lipsum[4-6]
+\lipsum[4]
 
-\begin{topic}[Topic] % run-in: first sentence follows on the SAME line (no blank line)
+\begin{topic}[Topic Environment]
   Topic environments start with an unindented line where the topic name starts the line and the first paragraph continues after it inline. Subsequent paragraphs indent with no vertical space.
 
-  \lipsum[7-8]
+  \lipsum[7]
 
-  \begin{subtopic}[Sub-Topic]
+  \begin{subtopic}[Sub-Topic Environment]
     Subtopic environments are a regular indented paragraph same as a regular paragraph in topic, but start with a subtopic name. The first paragraph continues after the subtopic name inline. Subsequent paragraphs are indented.
 
-    \lipsum[9-10]
+    \lipsum[9]
   \end{subtopic}
 
   \lipsum[11]
 \end{topic}
 
 Sometimes math is inline:
-
 \begin{itemize}
 \item The scalar value $\alpha \in \mathbb{R}$ satisfies the condition $\alpha^2 > 0$ for all non-zero inputs.
 \item Let $f(x) = e^{-x} \sin(x)$ be a continuous mapping on the open interval $(0, 1)$.
 \item Given vectors $\mathbf{u} = (1, 2, 3)$ and $\mathbf{v} = (4, 5, 6)$, their dot product is $\mathbf{u} \cdot \mathbf{v} = 32$.
-\item The function $g(z) = \frac{1}{2\pi i} \oint_{\gamma} \frac{g(w)}{w - z} \, dw$ defines the Cauchy integral formula.
-\item Lorem ipsum dolor sit amet, ubi $\sum_{n=1}^{\infty} a_n$ converges absolutely.
 \end{itemize}
 
-Other times it is not:
-
+Other times it is a displayed derivation:
 $$
 ax^2 + bx = -c
 $$
-
 Divide both sides by $a$:
-
 $$
 x^2 + \frac{b}{a}x = -\frac{c}{a}
 $$
-
 Add $\left(\frac{b}{2a}\right)^2$ to both sides to complete the square:
-
 $$
 x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2} - \frac{c}{a}
 $$
-
 $$
 \left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}
 $$
-
-Taking the square root of both sides gives:
-
-$$
-x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}
-$$
-
-Solving for $x$, we arrive at the quadratic formula:
-
+Taking the square root and solving for $x$, we arrive at the quadratic formula:
 $$
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
-Proof: Sum of Consecutive Integers
-\textbf{Theorem:} For any positive integer $n$, the sum of the first $n$ natural integers is given by:
+% ==================================================================
+% PART 2: PURE TUFTE LAYOUT
+% ==================================================================
+\newpage
+\setlayouttufte
 
-$$
-\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
-$$
+\subject{Part II: Pure Tufte Stream}
 
-\begin{enumerate}
-\item \textbf{Base Case:} For $n = 1$, the left-hand side is $1$, and the right-hand side is:
-  $$
-  \frac{1(1+1)}{2} = \frac{2}{2} = 1
-  $$
-  Thus, the base case holds.
-
-\item \textbf{Inductive Hypothesis:} Assume the formula holds for some integer $k \ge 1$:
-  $$
-  \sum_{i=1}^{k} i = \frac{k(k+1)}{2}
-  $$
-
-\item \textbf{Inductive Step:} We must show that it holds for $n = k + 1$:
-  $$
-  \sum_{i=1}^{k+1} i = \left( \sum_{i=1}^{k} i \right) + (k+1)
-  $$
-
-  Substitute the inductive hypothesis into the equation:
-  $$
-  \sum_{i=1}^{k+1} i = \frac{k(k+1)}{2} + (k+1)
-  $$
-
-  Factor out $(k+1)$:
-  $$
-  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k}{2} + 1 \right)
-  $$
-
-  Combine terms inside the parenthesis:
-  $$
-  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k + 2}{2} \right) = \frac{(k+1)(k+2)}{2}
-  $$
-
-  This matches the formula for $n = k + 1$. Therefore, by mathematical induction, the statement is true for all $n \in \mathbb{N}$. $\blacksquare$
-\end{enumerate}
-
-\tufte
-
-\subject{Subject Huge}
-
-\heading{Heading huge}
+\heading{Heading Huge (Tufte Measure)}
 
 \subheading{Sub-Heading LARGE}
 
 \subsubheading{Sub-Sub-Heading Large}
 
-\subsubsubheading{Sub-Sub-Sub-Heading large}
+\subsubsubheading{Sub-Sub-Sub-Heading Large}
 
-Regular paragraphs are in normal size, indented with no vertical space between them.
+In this section, text is strictly constrained to the optimal reading measure ($31.2\text{em} \approx 26\text{pc}$), leaving the right margin open for annotations and side commentary.
 
-\lipsum[4-6]
+\lipsum[4]
 
-\begin{topic}[Topic]
-  Topic environments start with an unindented line where the topic name starts the line and the first paragraph continues after it inline. Subsequent paragraphs indent with no vertical space.
+\begin{topic}[Tufte Topic]
+  Topic environments adapt seamlessly to the narrower column width. The elastic label spacing ensures no overfull boxes occur.
 
-  \lipsum[7-8]
+  \lipsum[7]
 
-  \begin{subtopic}[Sub-Topic]
-    Subtopic environments are a regular indented paragraph same as a regular paragraph in topic, but start with a subtopic name. The first paragraph continues after the subtopic name inline. Subsequent paragraphs are indented.
+  \begin{subtopic}[Tufte Sub-Topic]
+    Subtopic environments indent properly according to the font size and continue inline.
 
-    \lipsum[9-10]
+    \lipsum[9]
   \end{subtopic}
-
-  \lipsum[11]
 \end{topic}
 
-Sometimes math is inline:
+\lipsum[5]
 
-\begin{itemize}
-\item The scalar value $\alpha \in \mathbb{R}$ satisfies the condition $\alpha^2 > 0$ for all non-zero inputs.
-\item Let $f(x) = e^{-x} \sin(x)$ be a continuous mapping on the open interval $(0, 1)$.
-\item Given vectors $\mathbf{u} = (1, 2, 3)$ and $\mathbf{v} = (4, 5, 6)$, their dot product is $\mathbf{u} \cdot \mathbf{v} = 32$.
-\item The function $g(z) = \frac{1}{2\pi i} \oint_{\gamma} \frac{g(w)}{w - z} \, dw$ defines the Cauchy integral formula.
-\item Lorem ipsum dolor sit amet, ubi $\sum_{n=1}^{\infty} a_n$ converges absolutely.
-\end{itemize}
+% ==================================================================
+% PART 3: MIXED LAYOUT DYNAMICS (MID-PAGE TRANSITIONS)
+% ==================================================================
+\newpage
+\subject{Part III: Mid-Page Layout Dynamics}
 
-Other times it is not:
+\heading{Seamless Stream Transitions}
 
-$$
-ax^2 + bx = -c
-$$
+We begin this page in the **Tufte layout stream**. This paragraph is formatted to 65 characters per line, adhering to optimal typographic measure. 
+\marginpar{This is a margin note typeset neatly within the reserved margin note area.}
+Notice that the margin note to the right sits cleanly inside the canvas boundaries calculated by \texttt{geometry}'s \texttt{includemp} solver without overflowing the physical sheet.
 
-Divide both sides by $a$:
+\begin{topic}[Narrow Analysis]
+  Here is an analytical point discussed in the narrow measure. As soon as a mathematical proof requires extra horizontal breathing room, we can open a scoped \texttt{layoutfullwidth} environment without issuing a page break.
+\end{topic}
 
-$$
-x^2 + \frac{b}{a}x = -\frac{c}{a}
-$$
+% --- Seamless Mid-Page Switch to Full-Width ---
+\begin{layoutfullwidth}
+  \subheading{Wide Proof Block (Full-Width Environment)}
+  The layout has expanded across the gutter and margin area mid-page. Paragraphs now flow across the entire horizontal text area.
+  
+  % This marginpar will be gracefully omitted and emit a compile warning in the log:
+  \marginpar{Attempted marginal note in full-width mode.}
 
-Add $\left(\frac{b}{2a}\right)^2$ to both sides to complete the square:
+  \textbf{Theorem (Cauchy--Schwarz Inequality):} For all vectors $\mathbf{u}, \mathbf{v}$ in an inner product space, the following inequality holds:
+  $$
+  |\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le \langle \mathbf{u}, \mathbf{u} \rangle \cdot \langle \mathbf{v}, \mathbf{v} \rangle
+  $$
+  
+  \textit{Proof:} If $\mathbf{v} = \mathbf{0}$, the relation holds trivially as $0 \le 0$. Assume $\mathbf{v} \neq \mathbf{0}$. For any scalar $\lambda \in \mathbb{R}$, the non-negativity of the inner product norm guarantees:
+  $$
+  0 \le \|\mathbf{u} - \lambda \mathbf{v}\|^2 = \langle \mathbf{u} - \lambda \mathbf{v}, \, \mathbf{u} - \lambda \mathbf{v} \rangle = \langle \mathbf{u}, \mathbf{u} \rangle - 2\lambda \langle \mathbf{u}, \mathbf{v} \rangle + \lambda^2 \langle \mathbf{v}, \mathbf{v} \rangle
+  $$
+  Since this quadratic polynomial in $\lambda$ is always non-negative, its discriminant $\Delta$ must be non-positive:
+  $$
+  \Delta = (-2\langle \mathbf{u}, \mathbf{v} \rangle)^2 - 4(\langle \mathbf{v}, \mathbf{v} \rangle)(\langle \mathbf{u}, \mathbf{u} \rangle) \le 0 \implies 4|\langle \mathbf{u}, \mathbf{v} \rangle|^2 \le 4\langle \mathbf{u}, \mathbf{u} \rangle \langle \mathbf{v}, \mathbf{v} \rangle
+  $$
+  Dividing by 4 completes the proof. $\blacksquare$
+\end{layoutfullwidth}
+% --- End of Full-Width Block; Snaps Back to Tufte ---
 
-$$
-x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2} - \frac{c}{a}
-$$
+\subheading{Return to Narrow Column}
 
-$$
-\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}
-$$
+Notice what happened above: the proof expanded across the page, and this sentence **immediately snapped back** to the narrow Tufte measure on the **very same page**! 
+\marginpar{We are back in Tufte mode, so margin notes function normally again.}
 
-Taking the square root of both sides gives:
+There was no page ejection, no vertical jump, and no layout corruption. 
 
-$$
-x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}
-$$
+\begin{subtopic}[Scoped Safety]
+  The environment \texttt{layoutfullwidth} saved the previous layout stream and restored it upon exit. Furthermore, the \texttt{\string\marginpar} call inside the full-width block was suppressed, generating a clean warning in your compile log instead of printing over the edge of the paper.
+\end{subtopic}
 
-Solving for $x$, we arrive at the quadratic formula:
+\lipsum[10]
 
-$$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
+% --- Declarative Switch Test ---
+\setlayoutfullwidth
 
-Proof: Sum of Consecutive Integers
-\textbf{Theorem:} For any positive integer $n$, the sum of the first $n$ natural integers is given by:
+\heading{Declarative Switch to Full-Width}
 
-$$
-\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
-$$
+You can also use declarative commands (\texttt{\string\setlayoutfullwidth} and \texttt{\string\setlayouttufte}) when a transition should persist indefinitely rather than inside a local environment block.
 
 \begin{enumerate}
-\item \textbf{Base Case:} For $n = 1$, the left-hand side is $1$, and the right-hand side is:
+\item \textbf{Base Case ($n=1$):} The left-hand side equals $1$, and the right-hand side gives $\frac{1(1+1)}{2} = 1$. The base case holds.
+\item \textbf{Inductive Hypothesis:} Assume the proposition holds for $k \ge 1$:
   $$
-  \frac{1(1+1)}{2} = \frac{2}{2} = 1
+  \sum_{i=1}^k i = \frac{k(k+1)}{2}
   $$
-  Thus, the base case holds.
-
-\item \textbf{Inductive Hypothesis:} Assume the formula holds for some integer $k \ge 1$:
+\item \textbf{Inductive Step:} We examine the sum for $k+1$:
   $$
-  \sum_{i=1}^{k} i = \frac{k(k+1)}{2}
+  \sum_{i=1}^{k+1} i = \left(\sum_{i=1}^k i\right) + (k+1) = \frac{k(k+1)}{2} + (k+1) = (k+1)\left(\frac{k}{2} + 1\right) = \frac{(k+1)(k+2)}{2}
   $$
-
-\item \textbf{Inductive Step:} We must show that it holds for $n = k + 1$:
-  $$
-  \sum_{i=1}^{k+1} i = \left( \sum_{i=1}^{k} i \right) + (k+1)
-  $$
-
-  Substitute the inductive hypothesis into the equation:
-  $$
-  \sum_{i=1}^{k+1} i = \frac{k(k+1)}{2} + (k+1)
-  $$
-
-  Factor out $(k+1)$:
-  $$
-  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k}{2} + 1 \right)
-  $$
-
-  Combine terms inside the parenthesis:
-  $$
-  \sum_{i=1}^{k+1} i = (k+1) \left( \frac{k + 2}{2} \right) = \frac{(k+1)(k+2)}{2}
-  $$
-
-  This matches the formula for $n = k + 1$. Therefore, by mathematical induction, the statement is true for all $n \in \mathbb{N}$. $\blacksquare$
+  By induction, the equality holds for all natural numbers $n \in \mathbb{N}$. $\blacksquare$
 \end{enumerate}
+
+\setlayouttufte
+
+\heading{Back to Tufte}
+
+This final paragraph is returned to the narrow reading measure by calling \texttt{\string\setlayouttufte}.
+\marginpar{Final margin note verifying layout stability.}
+
+\lipsum[11]
 
 \end{document}
