@@ -180,4 +180,169 @@ This final paragraph is returned to the narrow reading measure by calling \textt
 
 \lipsum[11]
 
+% ==================================================================
+% PART 4: THE TUFTE-HEADER STREAM (40-CHAR CALIBRATION)
+% ==================================================================
+\newpage
+\setlayouttufteheader
+
+\subject{Part IV: Tufte-Header Stream}
+
+\heading{Display Header Measure ($W_{\text{header}}$)}
+
+This section demonstrates the dedicated \texttt{tufteheader} layout stream. 
+The width $W_{\text{header}}$ is derived in pure points as exactly 40 characters of the average between \texttt{huge} and \texttt{LARGE} font sizes ($W_{\text{header}} \approx 327\text{pt}$).
+\marginpar{Sidenotes are fully active in \texttt{tufteheader} mode, placed in the margin area.}
+It provides slightly more horizontal measure than the $300\text{pt}$ standard body measure, making it ideal for chapter lead-ins, executive abstracts, and wide headings while preserving the full margin column for notes.
+
+\begin{topic}[Tufte-Header Lead-in]
+  This topic environment is running inside the header stream. Observe how the line measure allows longer heading sentences without premature line-wrapping, and the margin note alongside it maintains clean alignment.
+\end{topic}
+
+\lipsum[12]
+
+% Mid-page transition within TufteHeader:
+\begin{layouttufte}
+  \subheading{Nested Tufte Column Inside Header Stream}
+  This sub-block dropped into standard Tufte body width ($300\text{pt}$) using the scoped \texttt{layouttufte} environment. Upon exiting this environment, the line measure will snap back to $W_{\text{header}}$.
+  \marginpar{Margin note anchored to the nested Tufte block.}
+  
+  \lipsum[14]
+\end{layouttufte}
+
+This paragraph is now back in the \texttt{tufteheader} measure ($327\text{pt}$). Both the header and standard Tufte streams share the same physical gutter ($28.3\text{pt}$) and right margin note column ($153.7\text{pt}$).
+
+% ==================================================================
+% PART 5: THE 16-TIER GEOMETRIC TYPOGRAPHIC SCALE
+% ==================================================================
+\newpage
+\setlayoutfullwidth
+
+\subject{Part V: 16-Tier Typographic Scale Specimen}
+
+\heading{Full Scale Hierarchy ($r = 1.15$)}
+
+Below is an exhaustive demonstration of all 16 font sizes defined in \texttt{habshe-tufte.cls}. Every size and its corresponding leading are mathematically locked to the geometric progression $S_k = F \cdot (1.15)^k$.
+
+\begin{description}
+\item[\texttt{\string\HUGE} ($k=+6$):] {\HUGE The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\Huge} ($k=+5$):] {\Huge The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\huge} ($k=+4$):] {\huge The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\LARGE} ($k=+3$):] {\LARGE The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\Large} ($k=+2$):] {\Large The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\large} ($k=+1$):] {\large The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\regular} ($k=0$):] {\regular The Quick Brown Fox Jumps Over The Lazy Dog (Base Fontsize $10\text{pt}$)}
+\item[\texttt{\string\SMALL} ($k=-1$):] {\SMALL The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\Small} ($k=-2$):] {\Small The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\small} ($k=-3$):] {\small The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\TINY} ($k=-4$):] {\TINY The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\Tiny} ($k=-5$):] {\Tiny The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\tiny} ($k=-6$):] {\tiny The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\MINUSCULE} ($k=-7$):] {\MINUSCULE The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\Minuscule} ($k=-8$):] {\Minuscule The Quick Brown Fox Jumps Over The Lazy Dog}
+\item[\texttt{\string\minuscule} ($k=-9$):] {\minuscule The Quick Brown Fox Jumps Over The Lazy Dog}
+\end{description}
+
+% ==================================================================
+% PART 6: GLOBAL MATH SUBSCRIPT SCALING
+% ==================================================================
+\newpage
+\setlayouttufte
+
+\subject{Part VI: Global Math Subscript Scaling}
+
+\heading{Equation Scaling Across NFSS Tiers}
+
+Our class configures the internal kernel table \texttt{\string\DeclareMathSizes} for all 16 tiers. When text size changes, first-order subscripts ($\scriptstyle$) drop 2 geometric tiers ($k-2$) and second-order subscripts ($\scriptscriptstyle$) drop 4 geometric tiers ($k-4$).
+
+\subheading{1. Math in \texttt{\string\LARGE} Context ($k=+3$)}
+{\LARGE
+  We evaluate the energy tensor $T_{\mu\nu}^{(\Lambda)}$ with indices:
+  $$
+  \int_{\Omega} \left( \sum_{i=1}^{n_{k_j}} \psi_{i^2}(x) \right) d\Omega = \oint_{\partial\Omega} \mathbf{F}_{\text{net}} \cdot d\mathbf{S}
+  $$
+}
+
+\subheading{2. Math in \texttt{\string\regular} Context ($k=0$)}
+{\regular
+  The identical equation in standard body prose demonstrates baseline math scaling:
+  $$
+  \int_{\Omega} \left( \sum_{i=1}^{n_{k_j}} \psi_{i^2}(x) \right) d\Omega = \oint_{\partial\Omega} \mathbf{F}_{\text{net}} \cdot d\mathbf{S}
+  $$
+}
+
+\subheading{3. Math in \texttt{\string\Small} Context ($k=-2$)}
+{\Small
+  In smaller quotations and topic blocks, subscripts maintain clear optical proportionality:
+  $$
+  \int_{\Omega} \left( \sum_{i=1}^{n_{k_j}} \psi_{i^2}(x) \right) d\Omega = \oint_{\partial\Omega} \mathbf{F}_{\text{net}} \cdot d\mathbf{S}
+  $$
+}
+
+\subheading{4. Math in \texttt{\string\Tiny} Margin Context ($k=-5$)}
+Notice the margin note to the right: \marginpar{%
+  \textbf{Sidenote Math:}\\
+  $f(x) = \sum_{i=1}^{k_j} \alpha_{i^2} x^i$\\
+  Even in tiny margins, sub-subscripts do not collide or vanish.
+}mathematical variables, first-order subscripts, and second-order subscripts are clearly distinguishable even in \texttt{\string\Tiny} script size
+\marginpar{%
+  \textbf{Sidenote Math:}\\
+  $f(x) = \sum_{i=1}^{k_j} \alpha_{i^2} x^i$\\
+  Even in tiny margins, sub-subscripts do not collide or vanish.
+}
+
+% ==================================================================
+% PART 7: LIST SPACING, NESTING & DISPLAY GLUE
+% ==================================================================
+\newpage
+\setlayoutfullwidth
+
+\subject{Part VII: Grid Alignment, Skips \& Lists}
+
+\heading{List Spacing and Multi-Level Nesting}
+
+List indents and skips are strictly derived from font size ($F$) and leading ($L$). Below is a two-level nested list featuring multi-paragraph items to demonstrate item separation (\texttt{\string\habshe@list@itemsep}) and paragraph separation inside lists (\texttt{\string\habshe@list@parsep}):
+
+\begin{enumerate}
+\item \textbf{First Primary Item:} Demonstrating primary list indentation (\texttt{\string\leftmargini} $= 2.0F$). The label width and separation are calculated directly from the font size.
+
+  This is a second paragraph within the same item. Notice that the gap above this paragraph is governed by \texttt{\string\parsep} ($0\text{pt} + 0.05L$), keeping multi-paragraph items visually grouped without excess vertical space.
+
+\item \textbf{Second Primary Item with Sub-List:}
+  \begin{itemize}
+  \item \textbf{Nested Bullet A:} Sub-lists use \texttt{\string\leftmarginii} ($1.5F$) with reduced top separation (\texttt{\string\habshe@list@topsep@ii} $= 0.25L$).
+  \item \textbf{Nested Bullet B:} The vertical rhythm between items is maintained at an exact quarter-leading ($0.25L$).
+  \end{itemize}
+
+\item \textbf{Third Primary Item:} Returning to level 1 enumeration.
+\end{enumerate}
+
+\heading{Display Math Skips: Standard vs. Short}
+
+TeX applies different vertical skips above equations depending on whether the preceding text line overlaps the equation box.
+
+\subheading{1. Preceding Line Overlaps Equation (Standard \texttt{\string\abovedisplayskip})}
+This is a intentionally long line of text designed to extend all the way across the column, guaranteeing that its rightmost edge overlaps the centered equation below. Consequently, TeX triggers the full \texttt{\string\abovedisplayskip} ($1.0L$ natural):
+$$
+\mathbf{K} \mathbf{u} = \mathbf{f}_{\text{ext}} - \mathbf{f}_{\text{int}}(\mathbf{u})
+$$
+
+\subheading{2. Preceding Line Ends Early (Short \texttt{\string\abovedisplayshortskip})}
+Short line:
+$$
+\mathbf{M}\ddot{\mathbf{u}} + \mathbf{C}\dot{\mathbf{u}} + \mathbf{K}\mathbf{u} = \mathbf{0}
+$$
+Because the preceding text ended early, TeX automatically applied \texttt{\string\abovedisplayshortskip} ($0.0L \text{ plus } 0.2L$), drawing the equation closer to its introducing label.
+
+\heading{Context-Aware Topic Vertical Spacing}
+
+When two topic environments occur consecutively, \texttt{\string\addvspace} collapses their adjacent vertical margins into $\max(\text{skip}_1, \text{skip}_2)$ rather than doubling the gap:
+
+\begin{topic}[Topic Alpha]
+  First topic block. It sets a vertical trailing skip of \texttt{\string\habshe@topicskip} ($1.5L$).
+\end{topic}
+\begin{topic}[Topic Beta]
+  Second topic block immediately following the first. Because \texttt{\string\addvspace} is used, the gap between Topic Alpha and Topic Beta is exactly $1.5L$, avoiding an unsightly double space.
+\end{topic}
+
 \end{document}
