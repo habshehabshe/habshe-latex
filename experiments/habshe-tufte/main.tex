@@ -1,4 +1,4 @@
-\documentclass{habshe-tufte}
+\documentclass[paper=a4, fontsize=9]{habshe-tufte}
 
 \usepackage{lipsum}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -281,14 +281,15 @@ Our class configures the internal kernel table \texttt{\string\DeclareMathSizes}
 
 \subheading{4. Math in \texttt{\string\Tiny} Margin Context ($k=-5$)}
 Notice the margin note to the right: \marginpar{%
-  \textbf{Sidenote Math:}\\
+  \textbf{Sidenote Inline Math:}\\
   $f(x) = \sum_{i=1}^{k_j} \alpha_{i^2} x^i$\\
   Even in tiny margins, sub-subscripts do not collide or vanish.
 }mathematical variables, first-order subscripts, and second-order subscripts are clearly distinguishable even in \texttt{\string\Tiny} script size
 \marginpar{%
-  \textbf{Sidenote Math:}\\
-  $f(x) = \sum_{i=1}^{k_j} \alpha_{i^2} x^i$\\
-  Even in tiny margins, sub-subscripts do not collide or vanish.
+  \textbf{Sidenote Display Math:}\\
+  $$
+  \int_{\Omega} \left( \sum_{i=1}^{n_{k_j}} \psi_{i^2}(x) \right) d\Omega = \oint_{\partial\Omega} \mathbf{F}_{\text{net}} \cdot d\mathbf{S}
+  $$
 }
 
 % ==================================================================

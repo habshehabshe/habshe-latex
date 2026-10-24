@@ -21,7 +21,7 @@
 
 % Default seed values
 \def\habshe@paper{a4}
-\def\habshe@fontsize@raw{10pt}
+\def\habshe@fontsize@raw{9pt}
 
 \ProcessKeyOptions\relax
 
@@ -102,12 +102,13 @@
 \setlength\habshe@size@MINUSCULE@d {\habshe@calc@size{-5}}
 \setlength\habshe@size@Minuscule@d {\habshe@calc@size{-6}}
 \setlength\habshe@size@minuscule@d {\habshe@calc@size{-7}}
+
 % ------------------------------------------------------------------
 % 2.1.2 Generalized Typographic Leading (Baselineskip) Formula
 % L(S_k, k) = S_k * ratio_lead - (k / damper_lead) + offset_lead
 % ------------------------------------------------------------------
 
-% Leading Formula Parameters (Adjustable)
+% Formula Parameters
 \newcommand{\habshe@lead@ratio}{1.20}      % Current default: 1.2 * Size
 \newcommand{\habshe@lead@damper}{999999}   % Set very high to disable dampening for now
 \newcommand{\habshe@lead@offset}{0}        % Static additive leading shift in pt
@@ -171,16 +172,16 @@
 \newdimen\habshe@bodywidth@d
 \newdimen\habshe@marginwidth@d
 
-% W_body: 60 chars of (SMALL + small) / 2
-% 60 * 0.50 * (SMALL + small) / 2 = 15 * (SMALL + small)
+% W_body: 65 chars of (SMALL + small) / 2
+% 65 * 0.50 * (SMALL + small) / 2 = 16.25 * (SMALL + small)
 \setlength\habshe@bodywidth@d{%
-  \dimexpr 15\habshe@size@SMALL@d + 15\habshe@size@small@d\relax
+  \dimexpr 16.25\habshe@size@SMALL@d + 16.25\habshe@size@small@d\relax
 }
 
-% W_margin: 50 chars of Tiny
-% 50 * 0.50 * Tiny = 25 * Tiny
+% W_margin: 45 chars of Tiny
+% 45 * 0.50 * Tiny = 22.5 * Tiny
 \setlength\habshe@marginwidth@d{%
-  \dimexpr 20\habshe@size@Tiny@d\relax
+  \dimexpr 22.5\habshe@size@Tiny@d\relax
 }
 
 % ------------------------------------------------------------------
@@ -321,10 +322,10 @@
 \newskip\habshe@subtopicskip
 
 \setlength\habshe@topicskip{%
-  \glueexpr 1.5\habshe@leading@d plus 0.2\habshe@leading@d minus 0.1\habshe@leading@d\relax
+  \glueexpr 1.50\habshe@leading@d plus 0.2\habshe@leading@d minus 0.1\habshe@leading@d\relax
 }
 \setlength\habshe@subtopicskip{%
-  \glueexpr 1.0\habshe@leading@d plus 0.15\habshe@leading@d minus 0.1\habshe@leading@d\relax
+  \glueexpr 1.25\habshe@leading@d plus 0.2\habshe@leading@d minus 0.1\habshe@leading@d\relax
 }
 
 % Heading Skips (Negative beforeskip suppresses post-heading indent)

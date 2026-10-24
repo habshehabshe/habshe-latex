@@ -1,2 +1,39 @@
+# ---- Regeneratable build artifacts: never commit ------------------------
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+*.xdv
+*.dvi
+*.ps
+*.nav
+*.snm
+*.vrb
+*.tdo
+*.pdf
+
+# ---- Shipping output -----------------------------------------------------
+dist/
+*.tar.gz
+
+# ---- Editor / tooling ------------------------------------------------------
 auto/
+
+# ---- Non-source content ------------------------------------------------------
 /chats/
+
+# Uncomment to keep showcase PDFs browsable on the forge:
+# !showcase/**/*.pdf
